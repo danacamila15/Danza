@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chumari Rosakame - Academia de Danza Folclórica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Nueva paleta de colores */
+        :root {
+            --color-amarillo: #FFD700;
+            --color-beige: #F5F5DC;
+            --color-rojo-vino: #800020;
+            --color-cafe: #6F4E37;
+            --color-blanco: #FFFFFF;
+            --color-texto: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--color-beige);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(rgba(106, 68, 45, 0.8), rgba(106, 68, 45, 0.7)), url('https://example.com/danza-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-blanco);
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            border-bottom: 5px solid var(--color-amarillo);
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-img {
+            max-width: 200px;
+            height: auto;
+            margin-right: 1rem;
+            border: 3px solid var(--color-amarillo);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: var(--color-blanco);
+            padding: 5px;
+        }
+        
+        .logo-text {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px var(--color-cafe);
+    color: var(--color-blanco);
+        }
+        
+        .slogan {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--color-amarillo);
+            font-weight: bold;
+        }
+        
+        nav {
+            background-color: var(--color-rojo-vino);
+            padding: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        
+        nav ul li a {
+            color: var(--color-blanco);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--color-amarillo);
+        }
+        
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: var(--color-beige);
+            border-bottom: 3px solid var(--color-cafe);
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-rojo-vino);
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--color-rojo-vino);
+            color: var(--color-blanco);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin: 0.5rem;
+            font-weight: bold;
+            border: 2px solid var(--color-cafe);
+        }
+        
+        .btn:hover {
+            background-color: var(--color-cafe);
+            color: var(--color-amarillo);
+            border-color: var(--color-rojo-vino);
+            transform: scale(1.05);
+        }
+        
+        /* Recuadros principales */
+        .contenedor-principal {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--color-beige);
+        }
+        
+        .recuadro {
+            flex: 1 1 350px;
+            background-color: var(--color-blanco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid var(--color-cafe);
+        }
+        
+        .recuadro:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .recuadro-titulo {
+            background-color: var(--color-cafe);
+            color: var(--color-amarillo);
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .recuadro-contenido {
+            padding: 1.5rem;
+        }
+        
+        .recuadro img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--color-rojo-vino);
+        }
+        
+        /* Sección de testimonios */
+        .testimonios {
+            padding: 3rem 2rem;
+            background-color: var(--color-rojo-vino);
+            color: var(--color-blanco);
+            text-align: center;
+            border-top: 5px solid var(--color-amarillo);
+            border-bottom: 5px solid var(--color-cafe);
+        }
+        
+        .testimonios h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-amarillo);
+        }
+        
+        .testimonios-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonio {
+            flex: 1 1 300px;
+            background-color: var(--color-blanco);
+            color: var(--color-texto);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--color-amarillo);
+        }
+        
+        .testimonio-texto {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .testimonio-autor {
+            font-weight: bold;
+            color: var(--color-rojo-vino);
+            font-size: 1.1rem;
+        }
+        
+        /* Recuadro de horarios */
+        .horarios {
+            background-color: var(--color-beige);
+            border: 2px dashed var(--color-rojo-vino);
+        }
+        
+        .horarios .recuadro-titulo {
+            background-color: var(--color-rojo-vino);
+            color: var(--color-amarillo);
+        }
+        
+        .horarios-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .horarios-tabla th, 
+        .horarios-tabla td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-cafe);
+        }
+        
+        .horarios-tabla th {
+            background-color: var(--color-cafe);
+            color: var(--color-amarillo);
+        }
+        
+        .horarios-tabla tr:nth-child(even) {
+            background-color: rgba(255, 215, 0, 0.1);
+        }
+        
+        footer {
+            background-color: var(--color-cafe);
+            color: var(--color-blanco);
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 5px solid var(--color-amarillo);
+        }
+        
+        .redes-sociales {
+            margin: 1rem 0;
+        }
+        
+        .redes-sociales a {
+            color: var(--color-blanco);
+            margin: 0 0.5rem;
+            font-size: 1.8rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        
+        .redes-sociales a:hover {
+            color: var(--color-amarillo);
+            transform: scale(1.2);
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+            }
+            
+            .logo-img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .recuadro {
+                flex: 1 1 100%;
+            }
+        }
+	.marquesina-container {
+            width: 100%;
+            overflow: hidden;
+            background-color: var(--color-beige);
+            border-top: 3px solid var(--color-rojo-vino);
+            border-bottom: 3px solid var(--color-rojo-vino);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+        }
+
+        .marquesina {
+            display: inline-block;
+            white-space: nowrap;
+            padding: 12px 0;
+            color: var(--color-rojo-vino   );
+            font-weight: bold;
+            font-size: 1.2rem;
+            animation: desplazar 25s linear infinite;
+        }
+
+        @keyframes desplazar {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .marquesina span {
+            margin: 0 40px;
+            position: relative;
+        }
+
+        .marquesina span::before {
+            content: "•";
+            color: var(--color-amarillo);
+            margin-right: 15px;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="unnamed.jpg" alt="Logo Chumari Rosakame" class="logo-img">
+            <div class="logo-text">Chumari Rosakame</div>
+        </div>
+        <div class="slogan">¡La danza folclórica vive en nuestros corazones!</div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="CONOOCENOS.html">Acerca de Nosotros</a></li>
+            <li><a href="FORMULARIO.html">Contacto</a></li>
+        </ul>
+    </nav>
+     <div class="marquesina-container">
+        <div class="marquesina">
+            <span>¡Inscripciones abiertas para todo el publico!</span>
+            <span>Presentación en teatro el 18 de Octubre</span>
+            <span>Clases para todas las edades</span>
+            <span>Talleres de bordado tradicional</span>
+	    <span>Concurso Paso del Norte este Sabado </span>
+            
+            <span>¡Inscripciones abiertas para todo el publico!</span>
+            <span>Presentación en teatro el 18 de Octubre</span>
+            <span>Clases para todas las edades</span>
+            <span>Talleres de bordado tradicional</span>
+	    <span>Concurso Paso del Norte este Sabado </span>
+
+        </div>
+    </div>
+    <section class="hero" id="inicio">
+        <h2>Bienvenidos a Chumari Rosakame</h2>
+        <p>Somos una academia dedicada a la enseñanza y preservación de las danzas folclóricas tradicionales. Nuestra misión es mantener vivas las tradiciones culturales a través del movimiento, la música y la expresión artística, con el vibrante espíritu mexicano.</p>
+        <a href="#clases" class="btn">Conoce nuestras clases</a>
+        <a href="FORMULARIO.html" class="btn">Contáctanos</a>
+    </section>
+    
+    <div class="contenedor-principal">
+        <div class="recuadro" id="acerca">
+            <div class="recuadro-titulo">Nuestra Historia</div>
+            <div class="recuadro-contenido">
+                <p>Fundada en 1995, Chumari Rosakame ha sido pionera en la preservación de las danzas tradicionales mexicanas. Nuestro nombre significa "Venado Blanco" en lengua Tarahumara.</p>
+                <p>Desde nuestros humildes comienzos en un pequeño estudio, hemos crecido hasta convertirnos en una de las academias de danza folclórica más competitivas y nombrada una de las mejores a nivel Regional y Estatal a nivel Bachilleres.</p>
+            </div>
+        </div>
+        
+        <div class="recuadro" id="clases">
+            <div class="recuadro-titulo">Nuestras Clases</div>
+                        <div class="recuadro-contenido">
+                <p>Ofrecemos clases llenas de energía y color para todas las edades y niveles:</p>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li>🎭 Danza folclórica mexicana</li>
+                    <li>💃 Talleres de jarabe tapatío</li>
+                    <li>👧👦 Clases para niños (desde 4 años)</li>
+                    <li>👵👴 Grupos para adultos mayores</li>
+                    <li>🔥 Talleres especiales de zapateado</li>
+                </ul>
+                <a href="FORMULARIO.html" class="btn" style="margin-top: 1rem;">¡Inscríbete ahora!</a>
+            </div>
+        </div>
+        
+        <div class="recuadro" id="eventos">
+            <div class="recuadro-titulo">Próximos Eventos</div>
+            <div class="recuadro-contenido">
+                <h3 style="color: var(--color-rojo-vino);">🎉 Festival Internacional</h3>
+                <p>15-20 de Noviembre, 2023</p>
+                <p>Participación especial de nuestro grupo avanzado</p>
+                
+                <h3 style="color: var(--color-rojo-vino); margin-top: 1.5rem;">💃 Presentación Anual</h3>
+                <p>10 de Diciembre, 2023</p>
+                <p>Espectáculo lleno de color y tradición</p>
+            </div>
+        </div>
+        
+        <div class="recuadro horarios">
+            <div class="recuadro-titulo">Horarios de Clases</div>
+            <div class="recuadro-contenido">
+                <table class="horarios-tabla">
+                    <thead>
+                        <tr>
+                            <th>Clase</th>
+                            <th>Días</th>
+                            <th>Horario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                       
+                        <tr>
+                            <td>Intermedios</td>
+                            <td>Lunes y miercoles</td>
+                            <td>5:00 - 6:30 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Avanzados</td>
+                            <td>martes</td>
+                            <td>7:00 - 9:00 pm</td>
+						<tr>
+                            <td>todos</td>
+                            <td>Sabados</td>
+                            <td>8:00 am - 1:00 pm</td>
+                        </tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <section class="testimonios" id="testimonios">
+        <h2>Lo que dicen nuestros estudiantes</h2>
+        <div class="testimonios-container">
+            <div class="testimonio">
+                <p class="testimonio-texto">"Chumari Rosakame transformó mi vida. No solo aprendí a bailar, sino que descubrí el orgullo por mis raíces mexicanas. ¡Cada clase es una fiesta de colores!"</p>
+                <p class="testimonio-autor">- María González, 5 años en la academia</p>
+            </div>
+            <div class="testimonio">
+                <p class="testimonio-texto">"La energía de los maestros es contagiosa. Enseñan con pasión y paciencia. ¡Nunca pensé que a mis 60 años aprendería a zapatear como profesional!"</p>
+                <p class="testimonio-autor">- Javier Mendoza, estudiante avanzado</p>
+            </div>
+            <div class="testimonio">
+                <p class="testimonio-texto">"Mis hijos han florecido en esta academia. No solo bailan, sino que han desarrollado confianza y amor por nuestra cultura. ¡Gracias Chumari Rosakame!"</p>
+                <p class="testimonio-autor">- Laura Sánchez, madre de estudiantes</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="contacto">
+        <h3 style="color: var(--color-amarillo);">¡Síguenos en redes sociales!</h3>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/share/g/19Hp3qNuWb/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/chumaritas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+            <a href="http://www.youtube.com/@chumarirosakame2983"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@bailarinas_en_apuro?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a>
+        </div>
+        
+        <p style="margin-top: 1.5rem;">Francisco Bocanegra s/n, Americas, 32575 Juárez, Chih.</p>
+        <p>Teléfono: (55) 1234 5678 | Email: info@chumarikosakame.com</p>
+        
+        <p style="margin-top: 1.5rem; color: var(--color-amarillo); font-weight: bold;">&copy; 2023 Chumari Rosakame - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

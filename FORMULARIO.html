@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Chumari Rosakame</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Nueva paleta de colores */
+        :root {
+            --color-amarillo: #FFD700;
+            --color-beige: #F5F5DC;
+            --color-rojo-vino: #800020;
+            --color-cafe: #6F4E37;
+            --color-blanco: #FFFFFF;
+            --color-texto: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--color-beige);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(rgba(106, 68, 45, 0.8), rgba(106, 68, 45, 0.7)), url('https://example.com/danza-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-blanco);
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            border-bottom: 5px solid var(--color-amarillo);
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-img {
+            max-width: 200px;
+            height: auto;
+            margin-right: 1rem;
+            border: 3px solid var(--color-amarillo);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: var(--color-blanco);
+            padding: 5px;
+        }
+        
+        .logo-text {
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px var(--color-cafe);
+            color: var(--color-blanco);
+        }
+        
+        .slogan {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--color-amarillo);
+            font-weight: bold;
+        }
+        
+        nav {
+            background-color: var(--color-rojo-vino);
+            padding: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        
+        nav ul li a {
+            color: var(--color-blanco);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--color-amarillo);
+        }
+        
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: var(--color-beige);
+            border-bottom: 3px solid var(--color-cafe);
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-rojo-vino);
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--color-rojo-vino);
+            color: var(--color-blanco);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin: 0.5rem;
+            font-weight: bold;
+            border: 2px solid var(--color-cafe);
+        }
+        
+        .btn:hover {
+            background-color: var(--color-cafe);
+            color: var(--color-amarillo);
+            border-color: var(--color-rojo-vino);
+            transform: scale(1.05);
+        }
+        
+        /* Estilos del formulario */
+        .formulario-contacto {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: var(--color-blanco);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 2px solid var(--color-cafe);
+        }
+        
+        .formulario-contacto h2 {
+            text-align: center;
+            color: var(--color-rojo-vino);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--color-amarillo);
+            padding-bottom: 0.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--color-cafe);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--color-cafe);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--color-rojo-vino);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(128, 0, 32, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .form-submit .btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        
+        .info-contacto {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 3rem auto;
+            max-width: 1000px;
+            gap: 2rem;
+        }
+        
+        .info-box {
+            flex: 1 1 300px;
+            background-color: var(--color-blanco);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--color-rojo-vino);
+            text-align: center;
+        }
+        
+        .info-box h3 {
+            color: var(--color-rojo-vino);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .info-box i {
+            font-size: 2rem;
+            color: var(--color-cafe);
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: var(--color-cafe);
+            color: var(--color-blanco);
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 5px solid var(--color-amarillo);
+        }
+        
+        .redes-sociales {
+            margin: 1rem 0;
+        }
+        
+        .redes-sociales a {
+            color: var(--color-blanco);
+            margin: 0 0.5rem;
+            font-size: 1.8rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        
+        .redes-sociales a:hover {
+            color: var(--color-amarillo);
+            transform: scale(1.2);
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+            }
+            
+            .logo-img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .info-box {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="unnamed.jpg" alt="Logo Chumari Rosakame" class="logo-img">
+            <div class="logo-text">Chumari Rosakame</div>
+        </div>
+        <div class="slogan">¡La danza folclórica vive en nuestros corazones!</div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="CONOOCENOS.html">Acerca de Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes preguntas sobre nuestras clases, eventos o quieres unirte a nuestra academia? Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+    </section>
+    
+    <div class="info-contacto">
+        <div class="info-box">
+            <i class="fas fa-map-marker-alt"></i>
+          <h3>Ubicación</h3>
+          <p>Francisco bocanegra&nbsp;</p>
+            <p>plantel bachilleres #11&nbsp; &nbsp;<br>
+              Ciudad Juarez&nbsp; &nbsp;</p>
+        </div>
+        
+        <div class="info-box">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Teléfono</h3>
+            <p>656 3367590<br>Lunes a Viernes<br>9:00 am - 6:00 pm</p>
+        </div>
+        
+        <div class="info-box">
+            <i class="fas fa-envelope"></i>
+            <h3>Correo Electrónico</h3>
+            <p>danasoto1560@cobachih.edu.mx&nbsp;</p>
+        </div>
+    </div>
+    
+    <form class="formulario-contacto" action="#" method="POST">
+        <h2>Formulario de Contacto</h2>
+        
+        <div class="form-group">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+        </div>
+        
+        <div class="form-group">
+            <label for="interes">Interesado en:</label>
+            <select id="interes" name="interes">
+                <option value="">Selecciona una opción</option>
+                <option value="clases-ninos">Clases para niños</option>
+                <option value="clases-adultos">Clases para adultos</option>
+				<option value="clases-avanzadas">Clases avanzadas</option>
+                <option value="otro">Otro</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+        </div>
+        
+        <div class="form-submit">
+            <button type="submit" class="btn">Enviar Mensaje</button>
+        </div>
+    </form>
+    
+    <footer>
+        <h3 style="color: var(--color-amarillo);">¡Síguenos en redes sociales!</h3>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/share/g/19Hp3qNuWb/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/chumaritas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+            <a href="http://www.youtube.com/@chumarirosakame2983"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@bailarinas_en_apuro?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a>
+
+        </div>
+        
+        <p style="margin-top: 1.5rem; color: var(--color-amarillo); font-weight: bold;">&copy; 2023 Chumari Rosakame - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
